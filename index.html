@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .boxContainer {
+        width: 400px;
+        height: 120px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        gap: 10px;
+      }
+      .boxContainer .box {
+        position: relative;
+        min-width: 120px;
+        height: 120px;
+        background-color: #3498db;
+        /* onReady 오른쪽에서 왼쪽으로 오는 효과 */
+        animation-name: slidein;
+        animation-duration: 1s;
+        /* slider 부드러움 효과. */
+        transition: 2s;
+        left:0px;
+      }
+      @keyframes slidein {
+        from {
+          margin-left: 100%;
+          width: 300%;
+        }
+        to {
+          margin-left: 0%;
+          width: 100%;
+          left: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxContainer">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <button onclick="moveSlider()">move..</button>
+  </body>
+  <script src="./index.js"></script>
+</html>
